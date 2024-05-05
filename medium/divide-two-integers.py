@@ -12,16 +12,16 @@ class Solution:
             return -1
         dividend = abs(dividend)
         divisor = abs(divisor)
-        res = 0
+        out = 0
         i = 1
         while dividend - divisor >= 0:
             if divisor**(i+1) > dividend:
-                res += divisor**(i-1)
+                out += divisor**(i-1)
                 dividend -= divisor**i
                 i = 1
             else:
                 i += 1
         if sign_dd == sign_dv:
-            return res
+            return out
         else:
-            return -res
+            return -out
